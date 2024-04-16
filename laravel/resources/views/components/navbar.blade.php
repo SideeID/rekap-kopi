@@ -24,7 +24,7 @@
                 <a href="{{ route('welcome') }}"
                     class="text-black dark:text-gray-400 hover:text-gray-800 dark:hover:text-white {{ Request::is('/') ? 'active_link' : '' }}">Beranda</a>
                 <a href="{{ route('features') }}"
-                    class="text-black dark:text-gray-400 hover:text-gray-800 dark:hover:text-white {{ Request::is(['admin/dashboard', 'karyawan/dashboard', 'admin/akun', 'jadwal', 'admin/keuangan', 'admin/pendapatan', 'prediksi', 'cuaca']) ? 'active_link' : '' }}">Fitur-Fitur</a>
+                    class="text-black dark:text-gray-400 hover:text-gray-800 dark:hover:text-white {{ Request::is(['admin/dashboard', 'karyawan/dashboard', 'admin/akun', 'jadwal', 'admin/keuangan', 'admin/pendapatan', 'prediksi', 'cuaca', 'upload']) ? 'active_link' : '' }}">Fitur-Fitur</a>
                 <a href="{{ route('about') }}"
                     class="text-black dark:text-gray-400 hover:text-gray-800 dark:hover:text-white {{ Request::is('tentang') ? 'active_link' : '' }}">Tentang
                     Kami</a>
