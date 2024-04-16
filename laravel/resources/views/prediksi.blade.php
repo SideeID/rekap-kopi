@@ -27,33 +27,37 @@
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full h-screen">
             {{-- <div class="bg-white p-6 rounded-lg shadow-md"> --}}
 
-                <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex justify-between">
-                    @csrf
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold" for="image">
-                            Pilih File Gambar
-                        </label>
-                        <input class="appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" name="image" type="file" required>
-                    </div>
+            <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data"
+                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex justify-between">
+                @csrf
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold" for="image">
+                        Pilih File Gambar
+                    </label>
+                    <input
+                        class="appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="image" name="image" type="file" required>
+                </div>
 
-                    <div class="flex items-center">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Prediksi
-                        </button>
-                    </div>
-                </form>
+                <div class="flex items-center">
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Prediksi
+                    </button>
+                </div>
+            </form>
 
-                <div class="mt-8">
-                    <h2 class="text-lg font-semibold text-gray-800">Hasil Prediksi</h2>
-                    <div class="mt-4">
-                        <div class="bg-gray-50 p-4 rounded-md shadow-md flex items-center justify-between">
-                            <!-- Menampilkan hasil prediksi di sini -->
-                            @isset($prediction)
-                                <p class="text-gray-700">Prediksi: {{ $prediction }}</p>
-                            @endisset
-                        </div>
+            <div class="mt-8">
+                <h2 class="text-lg font-semibold text-gray-800">Hasil Prediksi</h2>
+                <div class="mt-4">
+                    <div class="bg-gray-50 p-4 rounded-md shadow-md flex flex-col items-start space-y-2">
+                        @isset($prediction)
+                            <p class="text-gray-700">Jenis kopi: <strong>{{ $prediction }}</strong></p>
+                            <p class="text-gray-700">Harga: <strong>{{ $predictedPrice }}</strong></p>
+                        @endisset
                     </div>
                 </div>
+            </div>
 
             {{-- </div> --}}
         </main>
