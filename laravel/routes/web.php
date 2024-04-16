@@ -40,6 +40,11 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin/keuangan', [adminController::class, 'showKeuangan'])->name('admin.keuangan');
     Route::get('/admin/pendapatan', [adminController::class, 'showPendapatan'])->name('admin.pendapatan');
     Route::resource('admin/akun', PostController::class);
+    Route::get('/prediksi', function () {
+        return view('prediksi');
+    })->name('prediksi');
+
+    Route::post('/upload', [PredictionController::class, 'upload'])->name('upload');
 });
 
 Route::get('/features', function () {
@@ -57,6 +62,11 @@ Route::get('/features', function () {
 
 Route::middleware(['auth', 'is_karyawan'])->group(function () {
     Route::get('/karyawan/dashboard', [karyawanController::class, 'showDashboard'])->name('karyawan.dashboard');
+    Route::get('/prediksi', function () {
+        return view('prediksi');
+    })->name('prediksi');
+
+    Route::post('/upload', [PredictionController::class, 'upload'])->name('upload');
 });
 
 Route::get('/tentang', function () {
@@ -66,12 +76,6 @@ Route::get('/tentang', function () {
 Route::get('/jadwal', function () {
     return view('jadwal');
 })->name('jadwal');
-
-Route::get('/prediksi', function () {
-    return view('prediksi');
-})->name('prediksi');
-
-Route::post('/upload', [PredictionController::class, 'upload'])->name('upload');
 
 // Route::post('/predict', [PredictionController::class, 'predict']);
 
