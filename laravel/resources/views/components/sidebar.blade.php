@@ -98,7 +98,7 @@
             @endauth
         </li>
 
-        <li class="mb-1 group {{ Request::is('prediksi') ? 'active' : '' }}">
+        <li class="mb-1 group {{ (Request::is('prediksi') || Request::is('upload')) ? 'active' : '' }}">
             <a href={{ route('prediksi') }}
                 class="flex items-center py-2 px-4 text-black hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
                 <i class="ri-seedling-line mr-3 text-lg"></i>
